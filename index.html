@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracker — Solo Dev Dashboard</title>
+  <meta name="description" content="A personal productivity tracker for startup development and study progress.">
+  <meta name="theme-color" content="#0a0f1e">
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Chart.js via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Toast container (always present) -->
+  <div id="toast-container"></div>
+
+  <!-- Sidebar mobile overlay -->
+  <div id="sidebar-overlay"></div>
+
+  <!-- Sidebar toggle (mobile) -->
+  <button class="sidebar-toggle" id="sidebar-toggle" title="Toggle sidebar">☰</button>
+
+  <div class="app-layout">
+
+    <!-- ── Sidebar Navigation ────────────────────────────────────── -->
+    <aside id="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-icon">⚡</div>
+        <div>
+          <div class="sidebar-logo-text">Tracker</div>
+          <div class="sidebar-logo-sub">Solo Dev Dashboard</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-label">Overview</div>
+
+        <button class="nav-item" data-view="dashboard">
+          <span class="nav-icon">🏠</span>
+          Dashboard
+          <span class="nav-kbd">1</span>
+        </button>
+
+        <button class="nav-item" data-view="projects">
+          <span class="nav-icon">📁</span>
+          Projects
+          <span class="nav-kbd">2</span>
+        </button>
+
+        <div class="nav-section-label" style="margin-top:8px">Productivity</div>
+
+        <button class="nav-item" data-view="focus">
+          <span class="nav-icon">⏱</span>
+          Focus
+          <span class="nav-kbd">3</span>
+        </button>
+
+        <button class="nav-item" data-view="activity">
+          <span class="nav-icon">📋</span>
+          Activity
+          <span class="nav-kbd">4</span>
+        </button>
+
+        <button class="nav-item" data-view="analytics">
+          <span class="nav-icon">📈</span>
+          Analytics
+          <span class="nav-kbd">5</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span>⌘K</span>
+        <span>Command Palette</span>
+      </div>
+    </aside>
+
+    <!-- ── Main Content ──────────────────────────────────────────── -->
+    <main id="main-content">
+      <!-- Rendered by app.js -->
+      <div style="display:flex;align-items:center;justify-content:center;height:60vh;color:var(--text-muted)">
+        Loading…
+      </div>
+    </main>
+
+  </div>
+
+  <!-- ── Scripts (order matters) ──────────────────────────────── -->
+  <script src="lock.js"></script>
+  <script src="storage.js"></script>
+  <script src="ui.js"></script>
+  <script src="charts.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
